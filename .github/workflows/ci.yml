@@ -27,6 +27,10 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
+      - name: Docker Build
+        run : |
+          docker build -t ci -f Dockerfile .
+
       - name: Authorization
         run: |
           echo "Your Pull Request has been authorized successfully! 🥳"
